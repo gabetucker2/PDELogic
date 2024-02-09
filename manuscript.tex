@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+
+% Essential Packages
+\usepackage{amsmath} % Advanced math typesetting
+\usepackage{amsfonts} % Mathematical fonts
+\usepackage{amssymb} % Mathematical symbols
+\usepackage{geometry} % Page layout
+\usepackage{graphicx} % Include graphics
+\usepackage{hyperref} % Hyperlinks
+\usepackage{natbib} % Bibliography
+\usepackage{authblk} % Author affiliation
+
+% Page Layout
+\geometry{a4paper, margin=1in}
+% Title
+\title{Computationally Solving a Partial Differential Equation using a Single Logical Operator}
+
+% Author
+\author[1]{Gabriel Q. Tucker}
+\affil[1]{The Ohio State University, Department of Philosophy}
+\affil[2]{Columbus, OH, United States}
+
+% Date
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% Abstract
+\begin{abstract}
+The purpose of this paper is A) to serve as a concrete demonstration that you can solve a high-order mathematical proof using only binary logic; and B) to serve as a tutorial on how to both represent and compute high-order expressions in low-order languages.
+\end{abstract}
+
+% Keywords
+\vspace{0.5cm}
+\noindent \textbf{Keywords:} Second-Order Predicate Logic, Partial Differential Equations, Computational Mathematics
+
+% Introduction
+\section{Introduction}
+To solve our PDE, we will use only the NAND operator—the Sheffer stroke ($\uparrow$):\\
+
+\begin{tabular}{cc|c}
+A & B & \({A \uparrow B} \) \\ \hline
+T & T & F \\
+T & F & T \\
+F & T & T \\
+F & F & T \\
+\end{tabular}\\
+
+Using the Sheffer stroke, we will build to the rules required to perform the following PDE problem.\\
+
+The PDE we will solve is the Navier-Stokes Equation, used to describe the motion of viscous fluid substances,
+
+\begin{equation}
+0 = -\frac{dP}{dx} + \mu \frac{d^2u}{dx^2}
+\end{equation}
+
+where $P$ is the pressure, $\mu$ is the dynamic viscosity, and $u(x)$ is the velocity of the fluid as a function of position $x$. For simplicity, assume $P$ is a constant gradient, so $\frac{dP}{dx} = C$, where $C$ is a constant.
+
+The equation simplifies to:
+
+\begin{equation}
+\mu \frac{d^2u}{dx^2} = C
+\end{equation}
+
+Integrating both sides with respect to $x$ gives:
+
+\begin{equation}
+\mu \frac{du}{dx} = Cx + K_1
+\end{equation}
+
+where $K_1$ is an integration constant. Integrating again with respect to $x$:
+
+\begin{equation}
+\mu u = \frac{C}{2}x^2 + K_1x + K_2
+\end{equation}
+
+where $K_2$ is another integration constant. Finally, solving for $u(x)$:
+
+\begin{equation}
+u(x) = \frac{C}{2\mu}x^2 + \frac{K_1}{\mu}x + \frac{K_2}{\mu}
+\end{equation}
+
+This expression for $u(x)$ represents the velocity profile of the fluid under the given assumptions and conditions. The constants $K_1$ and $K_2$ can be determined based on boundary conditions specific to a problem.
+
+% Methodology
+\section{Justification}
+The language from which we will begin is second-order predicate logic.  This is because the ninth of the Peano axioms (as they are typically expressed) is a second-order axiom, since it involves induction over sets.\\
+
+From first-order logic, we may assign terms, which are either quantifier-bound variables or constants, to predicates.  We are permitted to use the existential and universal quantifiers.\\
+
+From second-order logic, 
+
+% Results
+\section{Results}
+Present the findings of your study. Use figures, tables, and equations to support your results.
+
+% Conclusion
+\section{Conclusion}
+Summarize the main findings and their implications. Discuss the limitations of your study and suggest future research directions.
+
+% Acknowledgements (Optional)
+\section*{Acknowledgements}
+Acknowledge any support or contributions from individuals or organizations.
+
+% References
+\bibliographystyle{apalike}
+\bibliography{references} % Assumes you have a bibliography file called references.bib
+
+\end{document}
